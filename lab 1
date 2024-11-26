@@ -1,0 +1,56 @@
+# 1. Prime Number
+n = int(input("Enter a Number: "))
+is_prime = True
+if n < 2:
+    is_prime = False
+else:
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            is_prime = False
+            break
+print("Prime") if is_prime else print("Not Prime")
+
+# 2. Palindrome Number
+n = int(input("Enter a Number: "))
+original = n
+reverse = 0
+while n > 0:
+    reverse = reverse * 10 + n % 10
+    n //= 10
+print("Palindrome") if original == reverse else print("Not Palindrome")
+
+# 3. Grade of Student Using Given Percentage
+percentage = float(input("Enter Student Percentage: "))
+if 100 >= percentage >= 90:
+    print("Grade: A")
+elif 90 > percentage >= 80:
+    print("Grade: B")
+elif 80 > percentage >= 70:
+    print("Grade: C")
+elif 70 > percentage >= 60:
+    print("Grade: D")
+elif 60 > percentage >= 33:
+    print("Grade: E")
+elif 33 > percentage >= 0:
+    print("Grade: F")
+else:
+    print("Invalid Percentage")
+
+# 4. Console Based Calculator
+num1 = float(input("Enter Number 1: "))
+num2 = float(input("Enter Number 2: "))
+operation = input("Enter Operation (+, -, *, /): ").strip()
+
+if operation == '+':
+    print("Answer:", num1 + num2)
+elif operation == '-':
+    print("Answer:", num1 - num2)
+elif operation == '*':
+    print("Answer:", num1 * num2)
+elif operation == '/':
+    if num2 != 0:
+        print("Answer:", num1 / num2)
+    else:
+        print("Error: Division by Zero")
+else:
+    print("Invalid Operation")
