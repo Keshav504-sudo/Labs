@@ -1,0 +1,82 @@
+# 5. Fibonacci Series
+n1 = int(input("Enter number of terms for Fibonacci series: "))
+second_last_term, last_term = 0, 1
+for i in range(n1):
+    if i == 0:
+        print(second_last_term)
+    elif i == 1:
+        print(last_term)
+    else:
+        next_term = second_last_term + last_term
+        print(next_term)
+        second_last_term, last_term = last_term, next_term
+
+# 6. Calculate Factorial Using Loop
+n2 = int(input("Enter a number: "))
+factorial = 1
+for i in range(1, n2 + 1):
+    factorial *= i
+print(f"Factorial of {n2}: {factorial}")
+
+# 7. Armstrong Number
+n3 = int(input("Enter a number: "))
+temp_n3, digits = n3, 0
+while temp_n3 > 0:
+    digits += 1
+    temp_n3 //= 10
+
+temp_n3, armstrong_sum = n3, 0
+while temp_n3 > 0:
+    digit = temp_n3 % 10
+    armstrong_sum += digit ** digits
+    temp_n3 //= 10
+
+if armstrong_sum == n3:
+    print(f"{n3} is an Armstrong Number")
+else:
+    print(f"{n3} is not an Armstrong Number")
+
+# 8. Perfect Number
+n4 = int(input("Enter a number: "))
+perfect_sum = sum(i for i in range(1, n4) if n4 % i == 0)
+
+if perfect_sum == n4:
+    print(f"{n4} is a Perfect Number")
+else:
+    print(f"{n4} is not a Perfect Number")
+
+# 9. Strong Number
+def factorial(n):
+    return 1 if n == 0 or n == 1 else n * factorial(n - 1)
+
+n5 = int(input("Enter a number: "))
+temp_n5, strong_sum = n5, 0
+while temp_n5 > 0:
+    digit = temp_n5 % 10
+    strong_sum += factorial(digit)
+    temp_n5 //= 10
+
+if strong_sum == n5:
+    print(f"{n5} is a Strong Number")
+else:
+    print(f"{n5} is not a Strong Number")
+
+# 10. Multiplication Tables
+n6 = int(input("Enter a number: "))
+print(f"Multiplication Table of {n6}:")
+for i in range(1, 11):
+    print(f"{n6} * {i} = {n6 * i}")
+
+# 11. LCM and GCD of Two Numbers
+n71 = int(input("Enter number 1: "))
+n72 = int(input("Enter number 2: "))
+a, b = n71, n72
+
+# GCD calculation using the Euclidean algorithm
+while b:
+    a, b = b, a % b
+gcd = a
+lcm = abs(n71 * n72) // gcd
+
+print(f"GCD of {n71} and {n72}: {gcd}")
+print(f"LCM of {n71} and {n72}: {lcm}")
